@@ -1,4 +1,4 @@
-package Task2;
+package Homework9.Task2;
 
 class Node<E> {
     E item;

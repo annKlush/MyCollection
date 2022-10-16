@@ -1,4 +1,4 @@
-package Task3;
+package Homework9.Task3;
 
 //import java.util.Queue
 public class MyQueue<E> {

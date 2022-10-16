@@ -1,7 +1,4 @@
-package Task5;
-
-
-import java.util.HashMap;
+package Homework9.Task5;
 
 public class MyHashMap<K, V> {
 
