@@ -1,5 +1,5 @@
 package Homework9.Task5;
-
+//import java.util.LinkedHashMap
 public class MyHashMap<K, V> {
 
     private Entry<K, V> last;
@@ -25,12 +25,6 @@ public class MyHashMap<K, V> {
     }
 
     public void put(K key, V value) {
-        /*if(i==0){
-           first= new Entry<K, V>(key, value);
-           i++;
-        }else{
-            last= new Entry<K, V>(key, value);
-        }*/
             Integer hash = hash(key);
 
             Entry<K, V> entry = new Entry<K, V>(key, value);
@@ -97,31 +91,36 @@ public class MyHashMap<K, V> {
     }
 
     void clear() {
-     /*   Integer hash = hash(first.key);
-        Entry<K, V> temp = buckets[hash];
-        Entry<K, V> prev = null;
-        while (temp!= null) {
-            temp.value=null;
-            temp.key=null;
-            prev=temp.next;
-            buckets[hash] = null;
-
-                return;
-        }
-            last =first=  null;
-*/
-    }
-
-    public void display() {
-        System.out.println("^^^^^^^^^^^^^^^^");
         for (Integer i = 0; i < capacity; i++) {
             Entry<K, V> temp = buckets[i];
             while (temp != null) {
-                System.out.println(temp.key + " -> " + temp.value);
+                temp.key=null;
+                temp.value=null;
+                buckets[i] = null;
                 temp = temp.next;
             }
         }
-        System.out.println("^^^^^^^^^^^^^^^^");
+        size=0;
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("My HashMap [");
+        for (Integer i = 0; i < capacity; i++) {
+            Entry<K, V> temp = buckets[i];
+          while (temp != null) {
+                sb.append(temp.key);
+                sb.append("=");
+                sb.append(temp.value);
+                if(i <= size){
+                sb.append(", ");
+                }
+                temp = temp.next;
+            }
+        }
+        sb.append("]");
+        return sb.toString();
+
     }
 
 
