@@ -1,4 +1,4 @@
-package Homework9.Task5;
+package homework9.task5;
 
 public class Entry<K, V> {
     K key;

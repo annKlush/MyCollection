@@ -1,4 +1,4 @@
-package Homework9.Task5;
+package homework9.task5;
 //import java.util.LinkedHashMap
 public class MyHashMap<K, V> {
 

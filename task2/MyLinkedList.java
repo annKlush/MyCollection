@@ -1,4 +1,4 @@
-package Homework9.Task2;
+package homework9.task2;
 
 public class MyLinkedList<E> {
     int size = 0;

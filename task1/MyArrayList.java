@@ -1,4 +1,4 @@
-package Homework9.Task1;
+package homework9.task1;
 
 public class MyArrayList{
     int size = 5;
@@ -22,12 +22,17 @@ public class MyArrayList{
 
 
     public Object[] remove(int index) {
+        if(arr.length > index){
         for (int i = index; i < length - 1; i++) {
             arr[i] = arr[i + 1];
         }
         length--;
         resize(arr.length - 1);
         return arr;
+        }
+        else{
+            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
+        }
     }
 
     public int size() {
@@ -39,10 +44,12 @@ public class MyArrayList{
         if (arr.length > index) {
             return arr[index];
         } else {
-            return "null";
+            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
         }
     }
-
+    private String outOfBoundsMsg(int index) {
+        return "Index: " + index + ", Size: " + size;
+    }
     public void clear() {
         length = 0;
         resize(0);

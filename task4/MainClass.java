@@ -1,6 +1,6 @@
-package Homework9.Task4;
+package homework9.task4;
 
-import Task3.MyQueue;
+//import Task3.MyQueue;
 
 public class MainClass {
     public static void main(String[] args) {

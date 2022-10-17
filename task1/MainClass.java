@@ -1,4 +1,4 @@
-package Homework9.Task1;
+package homework9.task1;
 
 public class MainClass {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class MainClass {
         arrayList.add(25);
         arrayList.printArray(arrayList.arr);
 
-        int index = 6;
+        int index = 5;
         System.out.println(arrayList.get(index) + " is an object in index #" + index);
 
         System.out.println("---after remove index #" + index + "---");
