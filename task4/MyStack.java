@@ -4,13 +4,13 @@ public class MyStack {
     private int mSize = 0;
     private Object[] q = new Object[mSize];
     private int count = 0;
-
     private int i = -1;
 
 
     public Object[] getQ() {
         return q;
     }
+
     void resize(int len, int x) {
         Object[] Array = new Object[len];
         System.arraycopy(q, 0, Array, x, count);
@@ -30,8 +30,10 @@ public class MyStack {
         for (int i = index; i < count - 1; i++) {
             q[i] = q[i + 1];
         }
+        Object[] Array = new Object[q.length - 1];
+        System.arraycopy(q, 0, Array, 0, count - 1);
+        q = Array;
         count--;
-        resize(count + 2, 0);
     }
 
     public void clear() {
@@ -40,15 +42,16 @@ public class MyStack {
         System.out.println("Clear!");
     }
 
-    public Object peek(){
+    public Object peek() {
         return q[0];
     }
 
-    public Object pool(){
+    public Object pool() {
         Object temp = q[0];
         remove(0);
         return temp;
     }
+
     public Object get(int index) {
         for (int i = 0; i < count - 1; i++) {
             if (i == index) {
@@ -58,12 +61,9 @@ public class MyStack {
         return q[index];
     }
 
-
     public int size() {
         return count;
     }
-
-
 
     public <E> void printQ(E[] value) {
         StringBuilder sb = new StringBuilder();

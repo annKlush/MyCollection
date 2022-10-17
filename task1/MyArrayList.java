@@ -1,6 +1,6 @@
 package homework9.task1;
 
-public class MyArrayList{
+public class MyArrayList {
     int size = 5;
 
     public int length = 0;
@@ -22,15 +22,14 @@ public class MyArrayList{
 
 
     public Object[] remove(int index) {
-        if(arr.length > index){
-        for (int i = index; i < length - 1; i++) {
-            arr[i] = arr[i + 1];
-        }
-        length--;
-        resize(arr.length - 1);
-        return arr;
-        }
-        else{
+        if (arr.length > index) {
+            for (int i = index; i < length - 1; i++) {
+                arr[i] = arr[i + 1];
+            }
+            length--;
+            resize(arr.length - 1);
+            return arr;
+        } else {
             throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
         }
     }
@@ -47,9 +46,11 @@ public class MyArrayList{
             throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
         }
     }
+
     private String outOfBoundsMsg(int index) {
         return "Index: " + index + ", Size: " + size;
     }
+
     public void clear() {
         length = 0;
         resize(0);

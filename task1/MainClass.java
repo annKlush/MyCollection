@@ -13,7 +13,7 @@ public class MainClass {
         arrayList.add(25);
         arrayList.printArray(arrayList.arr);
 
-        int index = 5;
+        int index = 6;
         System.out.println(arrayList.get(index) + " is an object in index #" + index);
 
         System.out.println("---after remove index #" + index + "---");
